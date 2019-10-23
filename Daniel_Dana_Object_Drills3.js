@@ -56,8 +56,26 @@ console.log(Hobbits.meals[3]);
 // Store these objects in an array.
 // Iterate over the array and use console.log to show each person's job title and name.
 
+let fred = {
+  name: 'fred',
+  jobTitle: 'kicker'
+}
 
+let george = {
+  name: 'fred',
+  jobTitle: 'puncher'
+}
 
+let velma = {
+  name: 'Velma',
+  jobTitle: 'Jinkies'
+}
+
+let peopleArr = [fred, george, velma];
+
+peopleArr.forEach(person => {
+  console.log(`${person.name} ${person.jobTitle}`);
+});
 
 
 
