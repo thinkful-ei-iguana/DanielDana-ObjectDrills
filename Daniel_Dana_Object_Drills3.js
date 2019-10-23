@@ -41,7 +41,10 @@ for(let key in fiver) {
 // Use console.log to show the name of a hobbit's fourth meal of the day.
 // Don't forget that humans and hobbits count from 1, but computers count from 0.
 
-
+const Hobbits = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+}
+console.log(Hobbits.meals[3]);
 
 
 
