@@ -187,6 +187,7 @@ function testIt3() {
 testIt3();
 
 /////4th Drill////
+
 // running the function with `objectA` and `expectedKeys`
 // should return `true`
 const objectA = {
@@ -207,8 +208,13 @@ const objectB = {
 const expectedKeys = ['id', 'name', 'age', 'city'];
 
 function validateKeys(object, expectedKeys) {
-  // your code goes here
-
+  const keys = Object.keys(object).sort();
+  if (keys.length === expectedKeys.length) {
+    if (keys.toString() === expectedKeys.sort().toString()) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /* From here down, you are not expected to 
