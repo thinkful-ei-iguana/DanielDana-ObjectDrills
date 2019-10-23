@@ -68,7 +68,7 @@ let george = {
 
 let velma = {
   name: 'Velma',
-  jobTitle: 'Jinkies'
+  jobTitle: 'Owner'
 }
 
 let peopleArr = [fred, george, velma];
@@ -80,12 +80,18 @@ peopleArr.forEach(person => {
 
 
 
-////5 -Porperties that Aren't there ///
-// xpand on the previous example by adding a boss property to everyone except the owner of the company.
+////5 -Properties that Aren't there ///
+// Expand on the previous example by adding a boss property to everyone except the owner of the company.
 // Change the iteration to print out messages in this format: "${title} ${name} reports to ${boss}.". For example: Junior Engineer Bob reports to Fred..
 // What gets printed out for the owner?
 // Adjust the message so that people with no boss display "${title} ${name} doesn't report to anybody." - for example, Founder John doesn't report to anybody.
-
+peopleArr.forEach(employee => {
+  if(employee.jobTitle!=='Owner') {
+    employee.boss='Velma';
+    console.log(`${employee.jobTitle} ${employee.name} reports to ${employee.boss}`);
+  }
+  else console.log(`${employee.jobTitle} ${employee.name} doesn't report to anybody.`);
+});
 
 
 
