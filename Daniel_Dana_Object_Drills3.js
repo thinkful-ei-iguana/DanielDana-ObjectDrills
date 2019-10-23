@@ -214,3 +214,38 @@ function weaponize(char, weapon) {          // adds a wepon attribute and mutate
 
 console.log(weaponize(cast[0], 'wizard staff'));
 console.log(cast[0].describe());
+
+
+
+
+///8 - BONUS /////
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+function findOne(arr, query){
+  let key = Object.keys(query)[0];
+  let value = Object.values(query)[0];
+  return HEROES.find(hero=>hero[key]===value) || null;
+}
+console.log(findOne(HEROES, { id: 8 }));
+
+
+const Database = {
+  store: {
+    heroes: [
+      { id: 1, name: 'Captain America', squad: 'Avengers' },
+      { id: 2, name: 'Iron Man', squad: 'Avengers' },
+      { id: 3, name: 'Spiderman', squad: 'Avengers' },
+      { id: 4, name: 'Superman', squad: 'Justice League' },
+      { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+      { id: 6, name: 'Aquaman', squad: 'Justice League' },
+      { id: 7, name: 'Hulk', squad: 'Avengers' },
+    ]
+  }
+};
