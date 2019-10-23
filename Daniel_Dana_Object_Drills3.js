@@ -195,11 +195,22 @@ console.log(cast.filter(person=>person.race==='Hobbit'));
 // Using the .filter() function, create a new array from characters that ONLY contains characters with attack value above 5.
 console.log(cast.filter(person=>person.attack>5));
 // What if you wanted to equip a weapon for each character and change how they are described? For example:
-
-// Gandolf the White is a Wizard of the Middle Earth who uses a wizard staff
+// Gandalf the White is a Wizard of the Middle Earth who uses a wizard staff
 // Bilbo Baggings is a Hobbit of the Shire who uses the Ring
 // Frodo ... String and Barrow Blade
 // Aragon .... Anduril
 // Legolas ... Bow and Arrow
 // Arwen .... Hadhafang
 // How would you change the factory function and other methods?
+
+function weaponize(char, weapon) {          // adds a wepon attribute and mutates the describe function
+  char.weapon = weapon;
+  char.describe = function () {
+    console.log(`${char.name} is a ${char.race} from ${char.origin} who uses a ${char.weapon}`);
+  }
+
+  return char;
+}
+
+console.log(weaponize(cast[0], 'wizard staff'));
+console.log(cast[0].describe());
