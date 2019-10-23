@@ -1,5 +1,6 @@
 /* eslint-disable strict */
 /* eslint-disable no-console */
+
 //////first Drill/////
 function makeStudentsReport(data) {
   return data.map(student=> `${student.name}: ${student.grade}`);
@@ -78,7 +79,11 @@ const studentData = [
 ];
   
 function enrollInSummerSchool(students) {
-  // your code here
+  students.forEach(student => {
+    student.status = 'In Summer school';
+  });
+
+  return students;
 }
   
 /* From here down, you are not expected to understand.... for now :)
@@ -88,7 +93,7 @@ function enrollInSummerSchool(students) {
   
 // tests
   
-function testIt() {
+function testIt2() {
   var testData = [
     {
       name: 'Burt',
@@ -135,7 +140,7 @@ function testIt() {
   }
 }
   
-testIt();
+testIt2();
   
 ///////third Drill///////////
 
