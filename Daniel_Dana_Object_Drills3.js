@@ -236,6 +236,8 @@ function findOne(arr, query){
 console.log(findOne(HEROES, { id: 8 }));
 
 
+// PART TWO!!!!!!!!!!
+
 const Database = {
   store: {
     heroes: [
@@ -247,5 +249,14 @@ const Database = {
       { id: 6, name: 'Aquaman', squad: 'Justice League' },
       { id: 7, name: 'Hulk', squad: 'Avengers' },
     ]
+  },
+
+  findOne(query) {
+    let key = Object.keys(query)[0];
+    let value = Object.values(query)[0];
+    return this.store.heroes.find(hero => hero[key] === value) || null;
   }
 };
+
+console.log(Database.findOne({id: 1}));
+
