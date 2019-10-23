@@ -1,32 +1,61 @@
 /* eslint-disable strict */
 /* eslint-disable no-console */
 //////first Drill/////
-const users = [
-  {
-    name: 'Bernard',
-    age: 29,
-    birthMonth: 'April',
-  },
-  {
-    name: 'Bernice',
-    age: 14,
-    birthMonth: 'December',
-  },
-  {
-    name: 'Gerard',
-    age: 88,
-    birthMonth: 'June',
-  },
-  {
-    name: 'Stella',
-    age: 3,
-    birthMonth: 'September',
-  },
-];
-  
-users.forEach(user =>
-  console.log(`${user.name} will be ${user.age + 1} in ${user.birthMonth}`)
-);
+function makeStudentsReport(data) {
+  return data.map(student=> `${student.name}: ${student.grade}`);
+}
+
+/* From here down, you are not expected to 
+   understand.... for now :)  
+   
+   Nothing to see here!
+   
+*/
+
+// tests
+
+function testIt1() {
+  const testData = [
+    { name: 'Jane Doe', grade: 'A' },
+    { name: 'John Dough', grade: 'B' },
+    { name: 'Jill Do', grade: 'A' },
+  ];
+
+  const expectations = ['Jane Doe: A', 'John Dough: B', 'Jill Do: A'];
+
+  const results = makeStudentsReport(testData);
+
+  if (!(results && results instanceof Array)) {
+    console.error('FAILURE: `makeStudentsReport` must return an array');
+    return;
+  }
+  if (results.length !== testData.length) {
+    console.error(
+      'FAILURE: test data had length of ' +
+        testData.length +
+        ' but `makeStudentsReport` returned array of length ' +
+        results.length
+    );
+    return;
+  }
+  for (let i = 0; i < expectations.length; i++) {
+    let expect = expectations[i];
+    if (
+      !results.find(function(item) {
+        return item === expect;
+      })
+    ) {
+      console.error(
+        'FAILURE: `makeStudentsReport` is not ' + 'producing expected strings'
+      );
+      return;
+    }
+  }
+  console.log('SUCCESS: `makeStudentsReport` is working');
+}
+
+testIt1();
+
   
 ////////// second Drill //////
 
