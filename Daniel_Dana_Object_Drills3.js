@@ -101,8 +101,33 @@ peopleArr.forEach(employee => {
 // Redo your Cracking the Code problem from String Drills but this time use an object as your cipher. This means, instead of doing some kind of condition check like if (char === 'a'), you should use an object's key-value pair structure as the code translator.
 // Additionally, create a decodeWords function that utilizes your decode function to accept a single string of words, and then return the fully decoded message as a string.
 
+const decoder = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+  decodeWords(string) {
+    let arr = string.split(' ');
+    let message = '';
+    arr.forEach((word) => {
+      if (word[0] === 'a') {
+        message += word[this.a];
+      } else if (word[0] === 'b') {
+        message += word[this.b];
+      } else if (word[0] === 'c') {
+        message += word[this['c']];
+      } else if (word[0] === 'd') {
+        message += word[this.d];
+      } else {
+        message += ' ';
+      }
+    });
+    return message;
+  }
+}
 
-
+let arr56 = 'craft block argon meter bells brown croon droop';
+console.log(decoder.decodeWords(arr56));
 
 ///////7 - Factory functions with LOTR //////
 // Write a factory function called createCharacter (review in this assignment) that could appropriately build characters from LOTR that have the following attributes:
