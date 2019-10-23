@@ -1,7 +1,12 @@
 /* eslint-disable strict */
 ////first drill Object creator///
 function createMyObject() {
-  // your code here
+  return {
+    foo: 'bar',
+    answerToUniverse: 42,
+    'olly olly': 'oxen free',
+    sayHello() {return 'hello'}
+  }
 }
   
 /* From here down, you are not expected to 
